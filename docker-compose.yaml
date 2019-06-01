@@ -2,7 +2,8 @@ version: "2.2"
 
 services:
   versions:
-#    image: coffeespiller/vizix-version-fetcher:latest
-    build: .
+    image: gdg/demo:v2
+    #network_mode: host
+    #build: .
     ports:
-      - 80:80
+       - 80:80

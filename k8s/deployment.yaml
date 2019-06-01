@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: gdg-lapaz
   labels:
-    mojix.service: gdg-lapaz
+    gdg.service: gdg-lapaz
 spec:
   replicas: 1
   selector:
     matchLabels:
-      mojix.service: gdg-lapaz
+      gdg.service: gdg-lapaz
   template:
     metadata:
       labels:
-        mojix.service: gdg-lapaz
+        gdg.service: gdg-lapaz
     spec:
       containers:
       - name: gdg-lapaz
@@ -22,16 +22,16 @@ spec:
             memory: 256Mi
           requests:
             memory: 256Mi
-        image: coffeespiller/gdg-nginx:latest
-      hostname: gdg-lapaz
+        image: coffeespiller/gdg-nginx:v2
+    #  hostname: gdg-lapaz
       restartPolicy: Always
-      
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    mojix.service: gdg-lapaz
+    gdg.service: gdg-lapaz
   name: gdg-lapaz
 spec:
   ports:
@@ -39,6 +39,6 @@ spec:
     port: 80
     targetPort: 80
   selector:
-    mojix.service: gdg-lapaz
+    gdg.service: gdg-lapaz
 status:
   loadBalancer: {}

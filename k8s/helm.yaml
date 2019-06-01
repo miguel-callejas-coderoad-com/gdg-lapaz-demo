@@ -28,4 +28,4 @@ subjects:
 # kubectl apply -f helm-rbac.yaml
 # helm init
 # helm search
-# helm install stable/nginx-ingress --name version-ingress-controller --namespace wildfire --set rbac.create=true 
+# helm install stable/nginx-ingress --name gdg-controller --namespace default --set rbac.create=true 
