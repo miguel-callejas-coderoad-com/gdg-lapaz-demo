@@ -1,0 +1,8 @@
+version: "2.2"
+
+services:
+  versions:
+#    image: coffeespiller/vizix-version-fetcher:latest
+    build: .
+    ports:
+      - 80:80

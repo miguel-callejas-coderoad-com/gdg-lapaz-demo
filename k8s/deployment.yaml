@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gdg-lapaz
+  labels:
+    mojix.service: gdg-lapaz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      mojix.service: gdg-lapaz
+  template:
+    metadata:
+      labels:
+        mojix.service: gdg-lapaz
+    spec:
+      containers:
+      - name: gdg-lapaz
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: 256Mi
+          requests:
+            memory: 256Mi
+        image: coffeespiller/gdg-nginx:latest
+      hostname: gdg-lapaz
+      restartPolicy: Always
+      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    mojix.service: gdg-lapaz
+  name: gdg-lapaz
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    targetPort: 80
+  selector:
+    mojix.service: gdg-lapaz
+status:
+  loadBalancer: {}
