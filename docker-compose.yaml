@@ -2,7 +2,7 @@ version: "2.2"
 
 services:
   versions:
-    image: gdg/demo:v2
+    image: coffeespiller/workshop:v1
     #network_mode: host
     #build: .
     ports:

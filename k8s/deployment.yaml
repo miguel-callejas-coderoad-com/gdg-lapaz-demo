@@ -5,7 +5,7 @@ metadata:
   labels:
     gdg.service: gdg-lapaz
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       gdg.service: gdg-lapaz
@@ -19,10 +19,10 @@ spec:
         imagePullPolicy: Always
         resources:
           limits:
-            memory: 256Mi
+            memory: 64Mi
           requests:
-            memory: 256Mi
-        image: coffeespiller/gdg-nginx:v2
+            memory: 64Mi
+        image: coffeespiller/workshop:v1
     #  hostname: gdg-lapaz
       restartPolicy: Always
 

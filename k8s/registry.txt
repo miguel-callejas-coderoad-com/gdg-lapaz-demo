@@ -1,0 +1,4 @@
+kubectl create secret docker-registry mojix-registry \
+--docker-server=https://index.docker.io/v1/ --docker-username=mojixpull \
+--docker-password=AL2D**** --docker-email=infrastructure@mojix.com \
+--namespace=dev-01-vizix-cloud
