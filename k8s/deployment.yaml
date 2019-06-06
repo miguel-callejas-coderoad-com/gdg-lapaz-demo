@@ -34,6 +34,7 @@ metadata:
     gdg.service: gdg-lapaz
   name: gdg-lapaz
 spec:
+  type: LoadBalancer
   ports:
   - name: "80"
     port: 80
